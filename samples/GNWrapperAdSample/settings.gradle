@@ -1,0 +1,2 @@
+include ':kotlin_app'
+rootProject.name = "GNWrapperAdSample"

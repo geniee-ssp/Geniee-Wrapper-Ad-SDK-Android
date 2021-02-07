@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "641013094861",
+    "project_id": "gnwrapperad",
+    "storage_bucket": "gnwrapperad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:641013094861:android:e58a8ff50767df374d4c84",
+        "android_client_info": {
+          "package_name": "jp.co.geniee.gnwrapperadsample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "641013094861-rh13gcsath75jlbp85hpvegbkm1rk39g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIvL2RSX_Uc1ZlFL8OvbmXLiUWftfCTlw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "641013094861-rh13gcsath75jlbp85hpvegbkm1rk39g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
