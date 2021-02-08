@@ -1,5 +1,9 @@
 apply plugin: 'com.android.application'
 
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
 // Add Firebase Service SDk
 apply plugin: 'com.google.gms.google-services'
 
@@ -34,20 +38,24 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-    // Add Firebase Service SDK
+    // TO integrate  Firebase Service SDK
     implementation platform('com.google.firebase:firebase-bom:26.2.0')
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.google.firebase:firebase-config'
 
-    // Add Google Mobile Ads SDK
+    // TO integrate  Google Mobile Ads SDK
     implementation 'com.google.android.gms:play-services-ads:19.6.0'
 
+    // TO integrate  Geniee Wrapper Ad SDK and Adapter
+//    implementation fileTree(dir: "libs", include: ["*.aar"])
 
+    implementation 'jp.co.geniee.gnwrapperadsdk.GNWrapperAdSDK:1.0.0'
+    implementation 'jp.co.geniee.gnhbadapter.GNHBPrebidBannerAdapter:1.0.0.0'
+    implementation 'jp.co.geniee.gnhbadapter.GNHBPubmaticBannerAdapter:1.0.0.0'
 
+    // TO integrate Prebid SDK
     implementation 'org.prebid:prebid-mobile-sdk:1.9'
 
     // To integrate OpenWrap SDK
     implementation 'com.pubmatic.sdk:openwrap:1.7.2'
-    // To integrate GAM event handler
-    implementation 'com.pubmatic.sdk:openwrap-eventhandler-dfp:1.2.0'
 }
