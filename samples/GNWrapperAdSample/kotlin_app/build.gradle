@@ -47,11 +47,11 @@ dependencies {
     implementation 'com.google.android.gms:play-services-ads:19.6.0'
 
     // TO integrate  Geniee Wrapper Ad SDK and Adapter
-//    implementation fileTree(dir: "libs", include: ["*.aar"])
+    implementation fileTree(dir: "libs", include: ["*.aar"])
 
-    implementation 'jp.co.geniee.gnwrapperadsdk.GNWrapperAdSDK:1.0.0'
-    implementation 'jp.co.geniee.gnhbadapter.GNHBPrebidBannerAdapter:1.0.0.0'
-    implementation 'jp.co.geniee.gnhbadapter.GNHBPubmaticBannerAdapter:1.0.0.0'
+//    implementation 'jp.co.geniee.gnwrapperadsdk.GNWrapperAdSDK:1.0.0'
+//    implementation 'jp.co.geniee.gnhbadapter.GNHBPrebidBannerAdapter:1.0.0.0'
+//    implementation 'jp.co.geniee.gnhbadapter.GNHBPubmaticBannerAdapter:1.0.0.0'
 
     // TO integrate Prebid SDK
     implementation 'org.prebid:prebid-mobile-sdk:1.9'

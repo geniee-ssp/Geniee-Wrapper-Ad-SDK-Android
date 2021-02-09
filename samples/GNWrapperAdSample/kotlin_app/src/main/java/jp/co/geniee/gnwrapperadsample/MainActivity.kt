@@ -3,9 +3,8 @@ package jp.co.geniee.gnwrapperadsample
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.constraintlayout.widget.ConstraintSet
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.LoadAdError
@@ -37,7 +36,7 @@ class MainActivity : AppCompatActivity(), GNWrapperAdBannerListener, AppEventLis
         GNWrapperAdSDK.setLogLevel(GNLogLevel.DEBUG)
         GNWrapperAdSDK.setTestMode(true)
 
-        val constraintLayout = findViewById<ConstraintLayout>(R.id.constraintLayout)
+        val adView = findViewById<FrameLayout>(R.id.ad_view_layout)
         PrebidMobile.setApplicationContext(applicationContext)
 
         firebaseRemoteConfig = FirebaseRemoteConfig.getInstance()
@@ -52,7 +51,7 @@ class MainActivity : AppCompatActivity(), GNWrapperAdBannerListener, AppEventLis
                         Log.d(TAG, "FirebaseRemoteConfig is Success")
                         val gnGNRemoteConfigValue = firebaseRemoteConfig!!.getString(GN_WRAPPER_CONFIG)
                         Log.d(TAG, "gnGNRemoteConfigValue: $gnGNRemoteConfigValue")
-                        gnWrapperAdBanner!!.initAndLoad(gnGNRemoteConfigValue)
+                        gnWrapperAdBanner!!.load(gnGNRemoteConfigValue)
                     } else {
                         Log.d(TAG, "FirebaseRemoteConfig is failed Exception: " + task.exception)
                     }
@@ -100,81 +99,12 @@ class MainActivity : AppCompatActivity(), GNWrapperAdBannerListener, AppEventLis
         }
         publisherAdView!!.appEventListener = this
         publisherAdView!!.id = View.generateViewId()
-        constraintLayout.addView(publisherAdView)
+        adView.addView(publisherAdView)
 
-        gnWrapperAdBanner = GNWrapperAdBanner(this, this)
+        gnWrapperAdBanner = GNWrapperAdBanner(this)
+        gnWrapperAdBanner!!.setGnWrapperAdBannerListener(this)
         gnWrapperAdBanner!!.id = View.generateViewId()
-        constraintLayout.addView(gnWrapperAdBanner)
-
-        setCenterConstraintSet(constraintLayout);
-    }
-
-    private fun setCenterConstraintSet(constraintLayout: ConstraintLayout) {
-        val constraintSet = ConstraintSet()
-        constraintSet.clone(constraintLayout)
-        constraintSet.constrainWidth(publisherAdView!!.id,
-                convertDp2Px(320f))
-        constraintSet.constrainHeight(publisherAdView!!.id,
-                convertDp2Px(50f))
-        constraintSet.constrainWidth(gnWrapperAdBanner!!.getId(),
-                convertDp2Px(320f))
-        constraintSet.constrainHeight(gnWrapperAdBanner!!.getId(),
-                convertDp2Px(50f))
-        constraintSet.connect(
-                publisherAdView!!.id,
-                ConstraintSet.BOTTOM,
-                ConstraintSet.PARENT_ID,
-                ConstraintSet.BOTTOM,
-                0)
-        constraintSet.connect(
-                publisherAdView!!.id,
-                ConstraintSet.LEFT,
-                ConstraintSet.PARENT_ID,
-                ConstraintSet.LEFT,
-                0)
-        constraintSet.connect(
-                publisherAdView!!.id,
-                ConstraintSet.RIGHT,
-                ConstraintSet.PARENT_ID,
-                ConstraintSet.RIGHT,
-                0)
-        constraintSet.connect(
-                publisherAdView!!.id,
-                ConstraintSet.TOP,
-                ConstraintSet.PARENT_ID,
-                ConstraintSet.TOP,
-                0)
-        constraintSet.connect(
-                gnWrapperAdBanner!!.id,
-                ConstraintSet.BOTTOM,
-                ConstraintSet.PARENT_ID,
-                ConstraintSet.BOTTOM,
-                0)
-        constraintSet.connect(
-                gnWrapperAdBanner!!.id,
-                ConstraintSet.LEFT,
-                ConstraintSet.PARENT_ID,
-                ConstraintSet.LEFT,
-                0)
-        constraintSet.connect(
-                gnWrapperAdBanner!!.id,
-                ConstraintSet.RIGHT,
-                ConstraintSet.PARENT_ID,
-                ConstraintSet.RIGHT,
-                0)
-        constraintSet.connect(
-                gnWrapperAdBanner!!.id,
-                ConstraintSet.TOP,
-                ConstraintSet.PARENT_ID,
-                ConstraintSet.TOP,
-                0)
-        constraintSet.applyTo(constraintLayout)
-        setContentView(constraintLayout)
-    }
-
-    private fun convertDp2Px(dp: Float): Int {
-        val metrics = this.resources.displayMetrics
-        return (dp * metrics.density).toInt()
+        adView.addView(gnWrapperAdBanner)
     }
 
     override fun onComplete(adUnitId: String?, gnCustomTargetingParams: GNCustomTargetingParams) {
