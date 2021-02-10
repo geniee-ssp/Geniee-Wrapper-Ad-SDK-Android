@@ -26,7 +26,7 @@ allprojects {
         jcenter()
 
         maven {
-            url 'https://raw.github.com/geniee-ssp/Geniee-Wrapper-Ad-SDK-Android/feature/GNWrapperAdSDK-1.0.0/repository'
+            url 'https://raw.github.com/geniee-ssp/Geniee-Wrapper-Ad-SDK-Android/master/repository'
         }
 
         maven {
