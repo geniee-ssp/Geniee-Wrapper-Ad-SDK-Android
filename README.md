@@ -6,7 +6,7 @@ GNWrapperAdSDKは株式会社ジーニーが提供するアプリにおける収
 1. GoogleAdManagerの[UPR](https://support.google.com/admanager/answer/9298008?hl=ja)(Unified pricing rules)最適化
 2. 各HeaderBidding SDKの最適化
 	- [Prebid](https://docs.prebid.org/prebid-mobile/prebid-mobile.html)
-	- [Pubmatic]()
+	- [Pubmatic](https://community.pubmatic.com/display/OB/OpenWrap+SDK+Home)
 
 ## 2. 前提条件
 実装にあたって以下の前提条件があります。
