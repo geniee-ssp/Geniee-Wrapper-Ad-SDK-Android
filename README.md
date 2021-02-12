@@ -265,13 +265,12 @@ GNWrapperAdSDKは株式会社ジーニーが提供するアプリにおける収
 このSDKはそれぞれ以下のSDKの実装手順を参考に作成しております。
 各SDKの詳細は以下をご覧ください。
 
-| 項目| URL | 
+| SDK| リンク |
 | :--  | :-- |
-| SDK| URL |
-| Firebase|  |
-| Google Ad Manager|  |
-| Prebid|  |
-| Prebid|  |
+| Firebase| [リンク](https://firebase.google.com/docs/guides?hl=ja) |
+| Google Ad Manager| [リンク](https://developers.google.com/ad-manager/mobile-ads-sdk/android/quick-start?hl=ja) |
+| Prebid| [リンク](https://docs.prebid.org/prebid-mobile/prebid-mobile-pbs.html) |
+| Pubmatic| [リンク](https://community.pubmatic.com/display/OB/OpenWrap+SDK+Home) |
 
 
 
