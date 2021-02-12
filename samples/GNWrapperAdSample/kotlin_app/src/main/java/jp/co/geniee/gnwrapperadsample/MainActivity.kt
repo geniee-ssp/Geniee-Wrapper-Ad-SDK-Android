@@ -54,23 +54,6 @@ class MainActivity : AppCompatActivity(), GNWrapperAdBannerListener, AppEventLis
         PrebidMobile.setApplicationContext(applicationContext)
 
         val adView = findViewById<FrameLayout>(R.id.ad_view_layout)
-        firebaseRemoteConfig = FirebaseRemoteConfig.getInstance()
-        val configSettings = FirebaseRemoteConfigSettings.Builder()
-                .setMinimumFetchIntervalInSeconds(3600)
-                .build()
-        firebaseRemoteConfig!!.setConfigSettingsAsync(configSettings)
-        firebaseRemoteConfig!!.setDefaultsAsync(R.xml.remote_config_defaults)
-        firebaseRemoteConfig!!.fetchAndActivate()
-                .addOnCompleteListener(this) { task ->
-                    if (task.isSuccessful) {
-                        Log.d(TAG, "FirebaseRemoteConfig is Success")
-                        val gnGNRemoteConfigValue = firebaseRemoteConfig!!.getString(GN_WRAPPER_CONFIG)
-                        Log.d(TAG, "gnGNRemoteConfigValue: $gnGNRemoteConfigValue")
-                        gnWrapperAdBanner!!.load(gnGNRemoteConfigValue)
-                    } else {
-                        Log.w(TAG, "FirebaseRemoteConfig is failed Exception: " + task.exception)
-                    }
-                }
 
         adManagerAdView = AdManagerAdView(this)
         adManagerAdView!!.adListener = object : AdListener() {
@@ -113,6 +96,27 @@ class MainActivity : AppCompatActivity(), GNWrapperAdBannerListener, AppEventLis
         gnWrapperAdBanner = GNWrapperAdBanner(this)
         gnWrapperAdBanner!!.setGnWrapperAdBannerListener(this)
         adView.addView(gnWrapperAdBanner)
+
+
+        firebaseRemoteConfig = FirebaseRemoteConfig.getInstance()
+        val configSettings = FirebaseRemoteConfigSettings.Builder()
+                .setMinimumFetchIntervalInSeconds(3600)
+                .build()
+        firebaseRemoteConfig!!.setConfigSettingsAsync(configSettings)
+        firebaseRemoteConfig!!.setDefaultsAsync(R.xml.remote_config_defaults)
+        firebaseRemoteConfig!!.fetchAndActivate()
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        Log.d(TAG, "FirebaseRemoteConfig is Success")
+                        val gnGNRemoteConfigValue = firebaseRemoteConfig!!.getString(GN_WRAPPER_CONFIG)
+                        Log.d(TAG, "gnGNRemoteConfigValue: $gnGNRemoteConfigValue")
+
+                        // Ad Load
+                        gnWrapperAdBanner!!.load(gnGNRemoteConfigValue)
+                    } else {
+                        Log.w(TAG, "FirebaseRemoteConfig is failed Exception: " + task.exception)
+                    }
+                }
     }
 
     override fun onComplete(adUnitId: String?, gnCustomTargetingParams: GNCustomTargetingParams) {
