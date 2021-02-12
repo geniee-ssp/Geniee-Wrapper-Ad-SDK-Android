@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<defaultsMap>
+    <entry>
+        <key>GNWrapperConfig_Android</key>
+        <value>
+            {
+                "unit_id": "/6499/example/banner",
+                "timeout": 0,
+                "use_upr": false,
+                "upr_settings": {},
+                "use_hb": false,
+                "hb_list": []
+            }
+
+
+        </value>
+        <key>GNWrapperConfig_Android_Prebid</key>
+        <value>
+            {
+            "unit_id": "/6499/example/banner",
+            "timeout": 0,
+            "use_upr": false,
+            "upr_settings": {},
+            "use_hb": false,
+            "hb_list": []
+            }
+
+
+        </value>
+    </entry>
+</defaultsMap>
