@@ -108,9 +108,9 @@ class MainActivity : AppCompatActivity(), GNWrapperAdBannerListener, AppEventLis
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
                         Log.d(TAG, "FirebaseRemoteConfig is Success")
-                        var gnGNRemoteConfigValue = firebaseRemoteConfig!!.getString(GN_WRAPPER_CONFIG)
+                        val gnGNRemoteConfigValue = firebaseRemoteConfig!!.getString(GN_WRAPPER_CONFIG)
                         Log.d(TAG, "gnGNRemoteConfigValue: $gnGNRemoteConfigValue")
-                        
+
                         // Ad Load
                         gnWrapperAdBanner!!.load(gnGNRemoteConfigValue)
                     } else {
