@@ -110,10 +110,7 @@ class MainActivity : AppCompatActivity(), GNWrapperAdBannerListener, AppEventLis
                         Log.d(TAG, "FirebaseRemoteConfig is Success")
                         var gnGNRemoteConfigValue = firebaseRemoteConfig!!.getString(GN_WRAPPER_CONFIG)
                         Log.d(TAG, "gnGNRemoteConfigValue: $gnGNRemoteConfigValue")
-
-                        gnGNRemoteConfigValue = "{\"unit_id\":\"/9116787/1385323\",\"timeout\":0,\"is_refresh\":false,\"refresh_interval\":0,\"use_upr\":false,\"upr_settings\":{},\"use_hb\":false,\"hb_list\":[]}"
-
-
+                        
                         // Ad Load
                         gnWrapperAdBanner!!.load(gnGNRemoteConfigValue)
                     } else {
