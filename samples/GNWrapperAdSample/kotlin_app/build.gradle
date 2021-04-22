@@ -48,12 +48,12 @@ dependencies {
 
     //  TO integrate  Geniee Wrapper Ad SDK and Adapter
     /*  If you want to get it with Maven, enable the following (recommended procedure)  */
-    implementation 'jp.co.geniee.gnwrapperadsdk:GNWrapperAdSDK:1.0.0'
+    implementation 'jp.co.geniee.gnwrapperadsdk:GNWrapperAdSDK:1.0.1'
     implementation 'jp.co.geniee.gnhbadapter:GNHBPrebidAdapter:1.0.0.0'
     implementation 'jp.co.geniee.gnhbadapter:GNHBPubmaticAdapter:1.0.0.0'
 
     /*  If you want to place aar under the libs folder, please enable the following */
-    //  implementation fileTree(dir: "libs", include: ["*.aar"]) */
+//    implementation fileTree(dir: "libs", include: ["*.aar"])
 
     // TO integrate Prebid SDK
     implementation 'org.prebid:prebid-mobile-sdk:1.9'

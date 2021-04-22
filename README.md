@@ -114,7 +114,7 @@ GNWrapperAdSDKは株式会社ジーニーが提供するアプリにおける収
 		implementation 'com.google.android.gms:play-services-ads:19.7.0'
 		
 		// To integrate  Geniee Wrapper Ad SDK
-		implementation 'jp.co.geniee.gnwrapperadsdk:GNWrapperAdSDK:1.0.0'
+		implementation 'jp.co.geniee.gnwrapperadsdk:GNWrapperAdSDK:1.0.1'
 	}
 	```
 	
