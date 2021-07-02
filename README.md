@@ -357,7 +357,7 @@ GNWrapperAdSDKは株式会社ジーニーが提供するアプリにおける収
 	```
     
     
-    - prebidを使用する場合
+    - Pubmaticを使用する場合
     
     Pubmaticを使用する場合は`adManagerAdView`に対して`appEventListener`のセットを行うため、以下のコードに修正します。
     
