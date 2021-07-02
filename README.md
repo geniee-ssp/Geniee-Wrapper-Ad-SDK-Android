@@ -351,11 +351,23 @@ GNWrapperAdSDKは株式会社ジーニーが提供するアプリにおける収
 
 	```
 	adManagerAdView = AdManagerAdView(this)
-	adManagerAdView!!.appEventListener = this
 	adView.addView(adManagerAdView)
 	
 	gnWrapperAdBanner = GNWrapperAdBanner(this)
 	```
+    
+    
+    - prebidを使用する場合
+    
+    Pubmaticを使用する場合は`adManagerAdView`に対して`appEventListener`のセットを行うため、以下のコードに修正します。
+    
+    ```    
+    adManagerAdView = AdManagerAdView(this)
+    adManagerAdView!!.appEventListener = this
+    adView.addView(adManagerAdView)
+    
+    gnWrapperAdBanner = GNWrapperAdBanner(this)
+    
 		
 ##### 4.4.4 Listerクラスの処理
 1. `GNWrapperAdBannerListener`のListenerクラスを`gnWrapperAdBanner`に登録します。
